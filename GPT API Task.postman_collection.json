@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "27393336-698f-452a-a4ff-d211369920cf",
+		"name": "GPT API Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20865362"
+	},
+	"item": [
+		{
+			"name": "Creating a prompt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"prompt\": \"hello world\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/create",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetching response from GPT using Prompt ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/fetch/4ab989f6-2aca-4cc1-adbc-25a609502e3d",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"fetch",
+						"4ab989f6-2aca-4cc1-adbc-25a609502e3d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Updating the prompt",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"prompt_id\": \"4ab989f6-2aca-4cc1-adbc-25a609502e3d\",\r\n    \"new_prompt\": \"this is the test prompt that is updated!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/update",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleting the prompt by prompt ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/remove/4ab989f6-2aca-4cc1-adbc-25a609502e3d",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"remove",
+						"4ab989f6-2aca-4cc1-adbc-25a609502e3d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
